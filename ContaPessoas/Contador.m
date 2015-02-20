@@ -24,6 +24,15 @@
     return self;
 }
 
++ (id)ContadorCompatilhado {
+    static Contador *ContadorCompartilhado = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        ContadorCompartilhado = [[self alloc] init];
+    });
+    return ContadorCompartilhado;
+}
+
 - (void)maisUmCueca {
     boy = boy + 1;
 }
@@ -39,6 +48,9 @@
     return girl;
 }
 
+-(int)getTotal {
+    return [self getBoys] + [self getGirls];
+}
 
 
 @end

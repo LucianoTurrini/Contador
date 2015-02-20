@@ -13,6 +13,8 @@
 
 -(int)getBoys;
 -(int)getGirls;
+-(int)getTotal;
++ (id)ContadorCompartilhado;
 
 @end
 

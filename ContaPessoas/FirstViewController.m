@@ -17,10 +17,11 @@
     Contador *contador;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    contador = [[Contador alloc] init];
-    // Do any additional setup after loading the view, typically from a nib.
+    contador = [Contador ContadorCompartilhado];
+    //Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
