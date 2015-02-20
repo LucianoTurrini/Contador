@@ -23,8 +23,8 @@
     }
     return self;
 }
-
-+ (id)ContadorCompatilhado {
+//Singleton
++ (id)ContadorCompartilhado {
     static Contador *ContadorCompartilhado = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

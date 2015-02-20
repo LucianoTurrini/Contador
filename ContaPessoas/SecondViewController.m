@@ -9,19 +9,8 @@
 #import "SecondViewController.h"
 #import "Contador.h"
 
-@protocol ADelegate <NSObject>
-
-@required
-- (void)didPrint;
-
-@optional
-- (void)willPrint;
-
-@end
-
 @interface SecondViewController () {
       Contador *contador;
-      id <ADelegate>delegate;
 }
 
 @end
@@ -34,6 +23,7 @@
     //Do any additional setup after loading the view, typically from a nib.
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -43,6 +33,13 @@
     _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
     _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
     _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
+    _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
+    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
+    
 }
 
 
