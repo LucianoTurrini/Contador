@@ -35,9 +35,11 @@
 
 - (void)maisUmCueca {
     boy = boy + 1;
+    [_delegate atualiza];
 }
 - (void)maisUmaGata {
     girl++;
+    [_delegate atualiza];
 }
 
 -(int)getBoys {
@@ -49,7 +51,8 @@
 }
 
 -(int)getTotal {
-    return [self getBoys] + [self getGirls];
+    //return [self getBoys] + [self getGirls];
+    return boy + girl;
 }
 
 

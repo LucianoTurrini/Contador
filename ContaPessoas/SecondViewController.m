@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     contador = [Contador ContadorCompartilhado];
+    contador.delegate = self;
+    NSLog(@"Chamei o didLoad e atualiza");
+    [self atualiza];
     //Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -35,7 +38,7 @@
     _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void) atualiza {
     _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
     _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
     _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
