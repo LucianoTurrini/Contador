@@ -33,9 +33,7 @@
 }
 
 - (IBAction)click:(id)sender {
-    _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
-    _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
-    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal]];
+    [self atualiza];
 }
 
 - (void) atualiza {
